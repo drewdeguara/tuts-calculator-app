@@ -24,7 +24,7 @@ function addMember() {
         memberDiv.innerHTML = `
             <input type="text" placeholder="Name" id="name${memberCount}" class="fadeIn1">
             <input type="number" placeholder="Days" id="days${memberCount}" class="fadeIn2">
-            <input type="number" placeholder="Expenses" id="expenses${memberCount}" class="fadeIn3">
+            <input type="number" placeholder="€" id="expenses${memberCount}" class="fadeIn3">
             <button type="button" onclick="removeMember(${memberCount})">X</button>
         `;
         document.getElementById('members').appendChild(memberDiv);

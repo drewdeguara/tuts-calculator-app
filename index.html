@@ -8,7 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Shared Flat Expenses</h1>
+    <!-- Title inside a header element -->
+    <header>
+        <h1>WG Calculator</h1>
+    </header>
+
+    <!-- Main content container -->
     <div class="container">
         <form id="expenses-form">
             <div class="members-and-buttons">
@@ -16,14 +21,17 @@
                     <!-- Member inputs will be added here dynamically -->
                 </div>
                 <div class="buttons">
-                    <button type="button" id="add-member-button" onclick="addMember()">Add Member</button>
+                    <button type="button" id="add-member-button" onclick="addMember()">Add Flatmate</button>
                     <button type="button" onclick="calculateExpenses()">Calculate</button>
                 </div>
             </div>
         </form>
+        
+        <!-- Results section -->
         <div id="results">
             <!-- Results will be displayed here -->
         </div>
+
         <!-- The "Details" button is hidden by default and shown after calculation -->
         <button type="button" id="details-button" onclick="showDetailedResults()" style="display: none;">Details</button>
     </div>
