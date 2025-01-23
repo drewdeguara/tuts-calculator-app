@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Detailed Results</h1>
+    <div id="detailed-results">
+        <!-- Detailed results will be displayed here -->
+    </div>
+    <button type="button" onclick="goBack()">Back</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const detailedResults = localStorage.getItem('detailedResults');
+            document.getElementById('detailed-results').innerHTML = detailedResults;
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

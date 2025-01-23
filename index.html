@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Flat Expenses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Shared Flat Expenses</h1>
+    <div class="container">
+        <form id="expenses-form">
+            <div class="members-and-buttons">
+                <div id="members">
+                    <!-- Member inputs will be added here dynamically -->
+                </div>
+                <div class="buttons">
+                    <button type="button" id="add-member-button" onclick="addMember()">Add Member</button>
+                    <button type="button" onclick="calculateExpenses()">Calculate</button>
+                </div>
+            </div>
+        </form>
+        <div id="results">
+            <!-- Results will be displayed here -->
+        </div>
+        <!-- The "Details" button is hidden by default and shown after calculation -->
+        <button type="button" id="details-button" onclick="showDetailedResults()" style="display: none;">Details</button>
+    </div>
+    
+    <!-- Overlay for detailed results -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-overlay" class="close-overlay-button">X</button>
+            <div id="detailed-results-content">
+                <!-- Detailed results will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

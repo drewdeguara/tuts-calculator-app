@@ -1,0 +1,335 @@
+body {
+    font-family: 'Lexend', ui-sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px; /* Added padding for better spacing */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lexend', ui-sans-serif;
+}
+
+#members {
+    margin-bottom: 20px;
+}
+
+.member {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    transition: transform 1s ease-out;
+}
+
+.fadeIn1,
+.fadeIn2,
+.fadeIn3 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.fadeIn1 {
+    animation-delay: 0s;
+}
+
+.fadeIn2 {
+    animation-delay: 0.2s;
+}
+
+.fadeIn3 {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+label {
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Lexend', ui-sans-serif;
+}
+
+input[type="text"],
+input[type="number"] {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    width: 200px;
+    height: 40px;
+    font-family: 'Lexend', ui-sans-serif;
+}
+
+button {
+    background-color: #444444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    font-family: 'Lexend', ui-sans-serif;
+}
+
+button:hover {
+    background-color: #555555;
+}
+
+button.disabled {
+    background-color: #1a1a1a;
+    color: #333333;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#results {
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Lexend', ui-sans-serif;
+    margin-bottom: 20px;
+}
+
+.pay {
+    color: #ff4d4d;
+}
+
+.receive {
+    color: #4dff4d;
+}
+
+.member button {
+    background-color: #000000;
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 50px;
+    font-family: 'Lexend', ui-sans-serif;
+}
+
+.member button:hover {
+    background-color: #ff6666;
+    color: #ffffff;
+}
+
+/* Animation for results text */
+.fadeInWord {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInWord 2s ease-out forwards;
+}
+
+@keyframes fadeInWord {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button#details-button {
+    background-color: #444444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    font-family: 'Lexend', ui-sans-serif;
+    display: none;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+button#details-button:hover {
+    background-color: #555555;
+}
+
+/* Overlay background */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* Content inside the overlay */
+.overlay-content {
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    color: #fff;
+    font-family: 'Lexend', ui-sans-serif;
+    text-align: left;
+    position: relative;
+}
+
+/* Styling the close button (X) */
+#close-overlay {
+    background-color: black;
+    color: red;
+    border: 2px solid red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#close-overlay:hover {
+    background-color: #ff6666;
+    color: white;
+    border: 2px solid #ff4d4d;
+}
+
+#close-overlay {
+    margin: 0;
+    padding: 0;
+}
+
+/* Detailed results content styling */
+#detailed-results-content {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+button[disabled] {
+    background-color: #1a1a1a;
+    color: #333333;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+        top: 10%;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1.2em;
+    }
+
+    #results {
+        font-size: 1em;
+    }
+
+    #close-overlay {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .overlay-content {
+        width: 90%;
+    }
+
+    .member button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* For smartphones in portrait mode */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+        top: 5%;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    #results {
+        font-size: 0.9em;
+    }
+
+    .overlay-content {
+        width: 95%;
+        padding: 10px;
+    }
+}
